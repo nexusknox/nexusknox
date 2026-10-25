@@ -1,4 +1,4 @@
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:F5B700&height=200&section=header&text=Ivan%20Kipkorir&fontSize=56&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=I%20build%20AI%20tools%20%E2%80%94%20and%20then%20I%20test%20whether%20you%20should%20trust%20them&descSize=16&descAlignY=58" />
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:F5B700&height=200&section=header&text=Nexus%20Knox&fontSize=56&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=I%20build%20AI%20tools%20%E2%80%94%20and%20then%20I%20test%20whether%20you%20should%20trust%20them&descSize=16&descAlignY=58" />
 
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3500&pause=800&color=F5B700&center=true&vCenter=true&width=720&multiline=false&lines=%3E+evaluating+LLM+outputs...;%3E+auditing+training+labels...;%3E+shipping+full-stack+apps...;%3E+status%3A+building+in+public+%E2%9A%A1" alt="Typing animation" />
