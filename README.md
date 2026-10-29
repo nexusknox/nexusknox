@@ -6,7 +6,7 @@
 
 <div align="center">
 
-<!-- BADGE:START --><a href="https://github.com/ivanedens55-web?tab=repositories"><img src="https://img.shields.io/badge/projects-10_public-302b63?style=flat-square&labelColor=0f0c29" /></a><!-- BADGE:END -->
+<!-- BADGE:START --><a href="https://github.com/nexusknox?tab=repositories"><img src="https://img.shields.io/badge/projects-10_public-302b63?style=flat-square&labelColor=0f0c29" /></a><!-- BADGE:END -->
 <img src="https://img.shields.io/badge/shipping-weekly-F5B700?style=flat-square&labelColor=0f0c29" />
 <img src="https://img.shields.io/badge/tests-run_on_every_push-2ea043?style=flat-square&labelColor=0f0c29" />
 
@@ -35,7 +35,7 @@
 
 ## ⚡ Projects
 
-<a href="https://github.com/ivanedens55-web?tab=repositories">
+<a href="https://github.com/nexusknox?tab=repositories">
   <img width="100%" src="assets/repo-bubbles.svg" alt="My 10 public repos as floating bubbles" />
 </a>
 
@@ -61,15 +61,15 @@
 
 <div align="center">
 
-<img src="https://streak-stats.demolab.com?user=ivanedens55-web&theme=tokyonight&hide_border=true&background=0f0c29&ring=F5B700&fire=F5B700&currStreakLabel=F5B700" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ivanedens55-web&layout=compact&theme=tokyonight&hide_border=true&bg_color=0f0c29&title_color=F5B700" />
+<img src="https://streak-stats.demolab.com?user=nexusknox&theme=tokyonight&hide_border=true&background=0f0c29&ring=F5B700&fire=F5B700&currStreakLabel=F5B700" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nexusknox&layout=compact&theme=tokyonight&hide_border=true&bg_color=0f0c29&title_color=F5B700" />
 
 </div>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ivanedens55-web/ivanedens55-web/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ivanedens55-web/ivanedens55-web/output/github-snake.svg" />
-  <img alt="contribution snake" src="https://raw.githubusercontent.com/ivanedens55-web/ivanedens55-web/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nexusknox/nexusknox/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/nexusknox/nexusknox/output/github-snake.svg" />
+  <img alt="contribution snake" src="https://raw.githubusercontent.com/nexusknox/nexusknox/output/github-snake-dark.svg" />
 </picture>
 
 <img width="100%" src="assets/divider.svg" />
