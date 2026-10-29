@@ -12,7 +12,7 @@ import urllib.request
 from pathlib import Path
 from xml.sax.saxutils import escape
 
-USER = os.environ.get("PROFILE_USER", "ivanedens55-web")
+USER = os.environ.get("PROFILE_USER", "nexusknox")
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "assets" / "repo-bubbles.svg"
 README = ROOT / "README.md"
