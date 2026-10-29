@@ -46,7 +46,7 @@
     <circle cx="44" cy="22" r="6" fill="#ffbd2e"/>
     <circle cx="64" cy="22" r="6" fill="#27c93f"/>
 
-    <text class="title" x="28" y="62">&gt; running evaluation: ivan.v2026</text>
+    <text class="title" x="28" y="62">&gt; running evaluation: nexus.v2026</text>
     <rect class="cursor" x="355" y="49" width="10" height="17"/>
 
     <g class="r1"><text class="label" x="28" y="102">validates model output</text>
