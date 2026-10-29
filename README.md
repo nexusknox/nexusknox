@@ -6,7 +6,7 @@
 
 <div align="center">
 
-<!-- BADGE:START --><a href="https://github.com/nexusknox?tab=repositories"><img src="https://img.shields.io/badge/projects-10_public-302b63?style=flat-square&labelColor=0f0c29" /></a><!-- BADGE:END -->
+<!-- BADGE:START --><a href="https://github.com/nexusknox?tab=repositories"><img src="https://img.shields.io/badge/projects-11_public-302b63?style=flat-square&labelColor=0f0c29" /></a><!-- BADGE:END -->
 <img src="https://img.shields.io/badge/shipping-weekly-F5B700?style=flat-square&labelColor=0f0c29" />
 <img src="https://img.shields.io/badge/tests-run_on_every_push-2ea043?style=flat-square&labelColor=0f0c29" />
 
