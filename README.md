@@ -24,7 +24,7 @@
 
 | Criterion | Verdict | Evidence |
 |:--|:--:|:--|
-| Builds things that actually run | ✅ | <!-- COUNT:START -->10<!-- COUNT:END --> public projects, <!-- LIVE:START -->6<!-- LIVE:END --> deployed live |
+| Builds things that actually run | ✅ | <!-- COUNT:START -->11<!-- COUNT:END --> public projects, <!-- LIVE:START -->6<!-- LIVE:END --> deployed live |
 | Doesn't trust model output blindly | ✅ | Schema validation and prompt-injection guards in every AI app |
 | Tests before shipping | ✅ | 55–65 pytest tests each on three full-stack APIs, plus GitHub Actions CI |
 | Knows when an AI judge is biased | ✅ | Position-bias check in `llm-response-evaluator` |
