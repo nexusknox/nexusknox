@@ -54,7 +54,8 @@
   <a href="https://github.com/nexusknox/duplicate-finder/releases/latest">Duplicate Finder</a> ·
   <a href="https://github.com/nexusknox/bulk-renamer/releases/latest">Bulk Renamer</a> ·
   <a href="https://github.com/nexusknox/disk-space-analyzer/releases/latest">Disk Space Analyzer</a> ·
-  <a href="https://github.com/nexusknox/image-resizer/releases/latest">Image Resizer</a>
+  <a href="https://github.com/nexusknox/image-resizer/releases/latest">Image Resizer</a> ·
+  <a href="https://github.com/nexusknox/folder-backup/releases/latest">Folder Backup</a>
 </p>
 
 <img width="100%" src="assets/divider.svg" />
