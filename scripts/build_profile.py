@@ -28,14 +28,17 @@ TECH = [
     ("FastAPI", r"fastapi"), ("Flask", r"flask"), ("Gemini", r"gemini"),
     ("Streamlit", r"streamlit"), ("Next.js", r"next\.?js"), ("PostgreSQL", r"postgres(?:ql)?"),
     ("Supabase", r"supabase"), ("React", r"\breact\b"), ("Tailwind", r"tailwind"),
+    ("Tkinter", r"tkinter"), ("Pillow", r"pillow"), ("SHA-256", r"sha-?256"),
 ]
 AI_WORDS = re.compile(r"\b(ai|llm|llms|gemini|openai|gpt)\b", re.I)
 AI_TOPICS = {"ai", "llm", "gemini", "gemini-api", "openai", "llm-evaluation", "machine-learning", "rag"}
+DESKTOP_WORDS = re.compile(r"\bdesktop[ -]app\b", re.I)
+DESKTOP_TOPICS = {"desktop-app", "tkinter"}
 
-GOLD, VIOLET, GREEN = "#F5B700", "#a78bfa", "#34d058"
+GOLD, VIOLET, GREEN, AQUA = "#F5B700", "#a78bfa", "#34d058", "#2dd4bf"
 FONT = "'Segoe UI',-apple-system,'Helvetica Neue',Arial,sans-serif"
 R, W = 72, 800
-AI_PER_ROW, APP_PER_ROW = 4, 3
+AI_PER_ROW, APP_PER_ROW, DESKTOP_PER_ROW = 4, 3, 4
 AI_GAP, APP_GAP, ROW_H = 180, 210, 170
 
 
@@ -49,6 +52,11 @@ def fetch_repos():
     with urllib.request.urlopen(request, timeout=30) as response:
         repos = json.load(response)
     return [r for r in repos if not (r["fork"] or r["archived"] or r["private"] or r["name"] == USER)]
+
+
+def is_desktop(repo):
+    text = f'{repo["name"]} {repo.get("description") or ""}'
+    return bool(DESKTOP_TOPICS & set(repo.get("topics", []))) or bool(DESKTOP_WORDS.search(text))
 
 
 def is_ai(repo):
@@ -90,7 +98,7 @@ def rows(items, per_row, gap, y0):
 
 
 def bubble(index, repo, x, y, kind):
-    ring, halo = ("rG", "hG") if kind == "ai" else ("rV", "hV")
+    ring, halo = {"ai": ("rG", "hG"), "app": ("rV", "hV"), "desktop": ("rA", "hA")}[kind]
     lines = name_lines(repo["name"])
     sub = subtitle(repo)
     total = len(lines) * 17 + (21 if sub else 0)
@@ -123,15 +131,17 @@ def section(y, color, label):
 
 
 def build_svg(repos):
-    ai = [r for r in repos if is_ai(r)]
-    apps = [r for r in repos if not is_ai(r)]
+    desktop = [r for r in repos if is_desktop(r)]
+    ai = [r for r in repos if is_ai(r) and not is_desktop(r)]
+    apps = [r for r in repos if not is_ai(r) and not is_desktop(r)]
     live_total = sum(1 for r in repos if r.get("homepage"))
     css, shapes, labels = [], [], []
     y = 135
     index = 0
-    for group, per_row, gap, color, title in (
-        (ai, AI_PER_ROW, AI_GAP, GOLD, "AI & evaluation"),
-        (apps, APP_PER_ROW, APP_GAP, VIOLET, None),
+    for group, per_row, gap, color, title, kind in (
+        (ai, AI_PER_ROW, AI_GAP, GOLD, "AI & evaluation", "ai"),
+        (apps, APP_PER_ROW, APP_GAP, VIOLET, None, "app"),
+        (desktop, DESKTOP_PER_ROW, AI_GAP, AQUA, "Desktop tools · Windows .exe downloads", "desktop"),
     ):
         if not group:
             continue
@@ -139,7 +149,6 @@ def build_svg(repos):
             live = sum(1 for r in group if r.get("homepage"))
             title = "Full-stack apps · " + ("all live" if live == len(group) else f"{live} live")
         labels.append(section(y, color, title))
-        kind = "ai" if color == GOLD else "app"
         for repo, x, cy in rows(group, per_row, gap, y + 90):
             index += 1
             c, s = bubble(index, repo, x, cy, kind)
@@ -155,6 +164,8 @@ def build_svg(repos):
 <linearGradient id="rV" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c4b5fd"/><stop offset="1" stop-color="#7c5ce6"/></linearGradient>
 <radialGradient id="hG"><stop offset=".7" stop-color="{GOLD}" stop-opacity=".16"/><stop offset="1" stop-color="{GOLD}" stop-opacity="0"/></radialGradient>
 <radialGradient id="hV"><stop offset=".7" stop-color="{VIOLET}" stop-opacity=".18"/><stop offset="1" stop-color="{VIOLET}" stop-opacity="0"/></radialGradient>
+<linearGradient id="rA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#99f6e4"/><stop offset="1" stop-color="#0d9488"/></linearGradient>
+<radialGradient id="hA"><stop offset=".7" stop-color="{AQUA}" stop-opacity=".16"/><stop offset="1" stop-color="{AQUA}" stop-opacity="0"/></radialGradient>
 </defs>
 <style>
 @keyframes fl{{0%,100%{{transform:translateY(0)}}50%{{transform:translateY(-7px)}}}}
@@ -193,6 +204,7 @@ def main():
         f'projects-{len(repos)}_public-302b63?style=flat-square&labelColor=0f0c29" /></a>'
     )
     text = replace_between(text, "BADGE", badge)
+    text = replace_between(text, "DESKTOP", str(sum(1 for r in repos if is_desktop(r))))
     README.write_text(text, encoding="utf-8")
     print(f"Built bubbles for {len(repos)} repos.")
 

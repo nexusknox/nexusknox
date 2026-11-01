@@ -1,7 +1,7 @@
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:F5B700&height=200&section=header&text=Nexus%20Knox&fontSize=56&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=I%20build%20AI%20tools%20%E2%80%94%20and%20then%20I%20test%20whether%20you%20should%20trust%20them&descSize=16&descAlignY=58" />
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3500&pause=800&color=F5B700&center=true&vCenter=true&width=720&multiline=false&lines=%3E+evaluating+LLM+outputs...;%3E+auditing+training+labels...;%3E+shipping+full-stack+apps...;%3E+status%3A+building+in+public+%E2%9A%A1" alt="Typing animation" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3500&pause=800&color=F5B700&center=true&vCenter=true&width=720&multiline=false&lines=%3E+evaluating+LLM+outputs...;%3E+auditing+training+labels...;%3E+shipping+full-stack+apps...;%3E+building+Windows+tools+that+never+lose+a+file...;%3E+status%3A+building+in+public+%E2%9A%A1" alt="Typing animation" />
 </p>
 
 <div align="center">
@@ -26,9 +26,10 @@
 |:--|:--:|:--|
 | Builds things that actually run | ✅ | <!-- COUNT:START -->14<!-- COUNT:END --> public projects, <!-- LIVE:START -->6<!-- LIVE:END --> deployed live |
 | Doesn't trust model output blindly | ✅ | Schema validation and prompt-injection guards in every AI app |
-| Tests before shipping | ✅ | 55–65 pytest tests each on three full-stack APIs, plus GitHub Actions CI |
+| Tests before shipping | ✅ | 55–65 pytest tests each on three full-stack APIs, plus GitHub Actions CI; every desktop tool tested on temporary folders |
 | Knows when an AI judge is biased | ✅ | Position-bias check in `llm-response-evaluator` |
 | Measures data quality, not vibes | ✅ | Cohen's kappa in `labellint` |
+| Handles real files without losing any | ✅ | <!-- DESKTOP:START -->5<!-- DESKTOP:END --> Windows tools with preview before every change, one-click undo, Recycle Bin instead of delete, and all-or-nothing renames in `bulk-renamer` |
 | Currently leveling up | 🔄 | Contributing REST API tests to [CVAT](https://github.com/cvat-ai/cvat) · Docker · pytest at scale |
 
 <img width="100%" src="assets/divider.svg" />
@@ -36,7 +37,7 @@
 ## ⚡ Projects
 
 <a href="https://github.com/nexusknox?tab=repositories">
-  <img width="100%" src="assets/repo-bubbles.svg" alt="My 10 public repos as floating bubbles" />
+  <img width="100%" src="assets/repo-bubbles.svg" alt="My public repos as floating bubbles" />
 </a>
 
 <p align="center">
@@ -45,6 +46,15 @@
   <a href="https://job-application-tracker-peach-kappa.vercel.app">Job tracker</a> ·
   <a href="https://link-shortener-phi-swart.vercel.app">Link shortener</a> ·
   <a href="https://event-rsvp-seven.vercel.app">Event RSVP</a>
+</p>
+
+<p align="center">
+  <b>🖥️ Download and run (Windows):</b>
+  <a href="https://github.com/nexusknox/file-organizer/releases/latest">File Organizer</a> ·
+  <a href="https://github.com/nexusknox/duplicate-finder/releases/latest">Duplicate Finder</a> ·
+  <a href="https://github.com/nexusknox/bulk-renamer/releases/latest">Bulk Renamer</a> ·
+  <a href="https://github.com/nexusknox/disk-space-analyzer/releases/latest">Disk Space Analyzer</a> ·
+  <a href="https://github.com/nexusknox/image-resizer/releases/latest">Image Resizer</a>
 </p>
 
 <img width="100%" src="assets/divider.svg" />
