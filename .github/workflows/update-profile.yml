@@ -8,11 +8,18 @@ on:
 permissions:
   contents: write
 
+# Never let two runs of this workflow push at the same time.
+concurrency:
+  group: update-profile
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main   # always start from the latest main, even on a re-run
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -25,5 +32,16 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md assets/repo-bubbles.svg
-          git diff --cached --quiet || git commit -m "Update profile project bubbles"
-          git push
+          if git diff --cached --quiet; then
+            echo "Nothing changed, skipping commit."
+            exit 0
+          fi
+          git commit -m "Update profile project bubbles"
+          # If main moved while we were building, put our commit on top and retry.
+          for attempt in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            git rebase --abort 2>/dev/null || true
+            echo "Push attempt $attempt failed, retrying in 5s..."
+            sleep 5
+          done
+          exit 1
